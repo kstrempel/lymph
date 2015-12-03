@@ -149,9 +149,9 @@ def _msgpack_load(stream, *args, **kwargs):
 
 
 msgpack_serializer = BaseSerializer(
-    dumps=functools.partial(msgpack.dumps, use_bin_type=True),
+    dumps=functools.partial(msgpack.dumps, use_bin_type=False),
     loads=functools.partial(msgpack.loads, encoding='utf-8', ext_hook=ext_hook),
-    dump=functools.partial(msgpack.dump, use_bin_type=True),
+    dump=functools.partial(msgpack.dump, use_bin_type=False),
     load=functools.partial(_msgpack_load, encoding='utf-8', ext_hook=ext_hook),
 )
 
